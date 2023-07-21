@@ -1,0 +1,28 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--space) *3.5);
+}
+
+.footer .logo {
+  font-size: 36px;
+}
+
+.footer nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--space) *3.5);
+}
+
+.footer nav ul:nth-child(1) {
+  display: flex;
+  gap: calc(var(--space) *6);
+}
+
+
+.footer nav ul:nth-child(2) {
+  display: flex;
+  gap: calc(var(--space) *2.5);
+}

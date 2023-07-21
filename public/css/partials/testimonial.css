@@ -1,0 +1,54 @@
+.section_testimonial {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space) * 5);
+  align-items: center;
+}
+
+.section_testimonial>div:nth-child(2) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--space) * 2);
+  justify-content: center;
+}
+
+.section_testimonial>div:nth-child(2)>div {
+  max-width: 400px;
+  height: 188px;
+  padding: calc(var(--space) * 2);
+}
+
+.section_testimonial>div:nth-child(2)>div>p {
+  border-left: 1.5px solid var(--color-orange);
+  padding-inline: calc(var(--space) * 2);
+  padding-bottom: calc(var(--space) * 1);
+  margin-bottom: calc(var(--space) * 1);
+  line-height: 1.2;
+  max-height: calc(var(--space) * 7.4);
+  overflow: hidden;
+}
+
+.section_testimonial>div:nth-child(2)>div>div{
+  display: flex;
+  align-items: center;
+}
+
+.section_testimonial>div:nth-child(2)>div>div>*{
+  margin-inline: calc(var(--space));
+}
+
+.section_testimonial>div:nth-child(2)>div>div>:first-child {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.section_testimonial>div:nth-child(2)>div>div>div {
+  display: flex;
+  flex-direction: column;
+}
+
+.section_testimonial>div:nth-child(2)>div>div>div>span {
+  height: 20px;
+}

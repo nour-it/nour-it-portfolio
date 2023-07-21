@@ -1,0 +1,104 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "DMSans";
+  src: url(/css/font/DM_Sans/DMSans-Bold.ttf) format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Manrope;
+  src: url(/css/font/Manrope/static/Manrope-Regular.ttf) format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Manrope;
+  src: url(/css/font/Manrope/static/Manrope-Medium.ttf) format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Manrope;
+  src: url(/css/font/Manrope/static/Manrope-Bold.ttf) format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Manrope;
+  src: url(/css/font/Manrope/static/Manrope-ExtraBold.ttf) format("truetype");
+  font-weight: bolder;
+}
+
+:root {
+  --color-white: #FFFFFF;
+  --color-gray-1: #D9D9D9;
+  --color-gray-2: #D8D8D8;
+  --color-gray-3: #D4D4D4;
+  --color-gray-4: #CFCCCC;
+  --color-gray-5: #B6B6B6;
+  --color-gray-6: #A39E9E;
+  --color-gray-7: #A6A6A6;
+  --color-gray-8: #79819A;
+  --color-gray-9: #545353;
+  --color-gray-10: #4A4A4A;
+  --color-gray-11: #31353B;
+  --color-gray-12: #DDDDDD;
+  --color-red: #FF0000;
+  --color-orange: #FD5B1B;
+  --color-black-1: #000000;
+  --color-black-2: #2E2E48;
+
+
+  --color-body-background: var(--color-white);
+  --color-title-black: var(--color-gray-11);
+  --color-text-black-1: var(--color-gray-10);
+  --color-text-black-2: var(--color-black-1);
+  --color-text-black-3: var(--color-black-2);
+  --color-text-gray-1: var(--color-gray-9);
+  --color-text-gray-2: var(--color-gray-6);
+  --color-text-gray-3: var(--color-gray-8);
+  --color-text-gray-4: var(--color-gray-5);
+  --color-text-gray-5: var(--color-gray-2);
+
+  --color-logo-black: var(--color-gray-11);
+
+  --color-primary: var(--color-orange);
+  --color-dot: var(--color-gray-1);
+  --color-border: var(--color-gray-12);
+
+  
+  --radius: 12px;
+  --max-width: 920px;
+  --shadow: #0000006b;
+  --space: 10px;
+  --nav-background: #cbcbd099;
+
+  scroll-behavior: smooth;
+}
+
+#arrow-down-svg {
+  color: var(--color-black-1);
+  margin-bottom: -4px;
+  margin-right: calc(var(--space));
+}
+#arrow-right-svg {
+  color: var(--color-black-1);
+  margin-bottom: -4px;
+  margin-left: calc(var(--space));
+}
+#email-svg {
+  color: var(--color-black-1);
+}
+#messanger-svg {
+  color: var(--color-black-1);
+}
+#whatsapp-svg {
+  color: var(--color-black-1);
+}
