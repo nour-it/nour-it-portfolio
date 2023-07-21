@@ -1,44 +1,88 @@
 import React from 'react'
 
 export default function Skills() {
-  return (
-    <section className="section_skills" id="skills">
-      <div>
-        <h1 className="h1">Skills</h1>
-        <p className="text-gray-1">My technical level</p>
-      </div>
-      <div>
-        <div className="card-1 border"><img src="/img/figma.png" alt="" />
-          <p className="text-black-3">Figma</p><span className="text-gray-3">UI Design, Prototype</span>
-        </div>
-        <div className="card-1 border"><img src="/img/react.svg" alt="" height="50px"/>
-          <p className="text-black-3">ReactJS + React Native</p><span className="text-gray-3">Front-end developpement</span>
-        </div>
-        <div className="card-1 border">
-          <div><img src="/img/mysql.png" alt="" height="50px"/><img src="/img/postgres.png" alt="" height="50px"/></div>
-          <p className="text-black-3">Mysql + Postgres</p><span className="text-gray-3">Databases</span>
-        </div>
-        <div className="card-1 border">
-          <div><img src="/img/php.png" alt="" height="50px"/><img src="/img/nodejs.png" alt="" height="50px"/></div>
-          <p className="text-black-3">Php + NodeJS</p><span className="text-gray-3">Server-side languages</span>
-        </div>
-        <div className="card-1 border"><img src="/img/html.png" alt=""/>
-          <p className="text-black-3">HTML 5</p><span className="text-gray-3">Structural Design</span>
-        </div>
-        <div className="card-1 border">
-          <div><img src="/img/css.png" alt=""/><img src="/img/scss.png" alt="" height="60px"/></div>
-          <p className="text-black-3">CSS 3 + SCSS</p><span className="text-gray-3">Style Design</span>
-        </div>
-        <div className="card-1 border"><img src="/img/laravel.svg" alt=""/>
-          <p className="card-1 text-black-3">Laravel</p><span className="text-gray-3">Frameworks and libraries</span>
-        </div>
-        <div className="card-1 border"><img src="/img/vscode.png" alt=""/>
-          <p className="text-black-3">VS Code</p><span className="text-gray-3">Code Editor</span>
-        </div>
-        <div className="card-1 border"><img src="/img/git.png" alt="" width="100px"/>
-          <p className="text-black-3">Git</p><span className="text-gray-3">Version control</span>
-        </div>
-      </div>
-    </section>
-  )
+    return (
+        <section className="section_skills" id="skills">
+            <div>
+                <h1 className="h1">{SKILL.title}</h1>
+                <p className="text-gray-1">{SKILL.subtitle}</p>
+            </div>
+            <div>
+                {SKILL.skills.map(skillItem)}
+            </div>
+        </section>
+    )
 }
+
+
+function skillItem(skill: Object, index: number, array: Object[]): React.ReactNode {
+    const images = Object.values(skill)[0];
+    const name = Object.values(skill)[1];
+    const category = Object.values(skill)[2];
+    const height = Object.values(skill)[3];
+    return <div className="card-1 border" key={index.toString()}>
+        <div>
+            {images.map((img: string, i: number) => <img src={`/img/${img}`} alt="" key={index.toString() + i.toString()} height={height} />)}
+        </div>
+        <p className="text-black-3">{name}</p>
+        <span className="text-gray-3">{category}</span>
+    </div>
+}
+
+type Skill = {
+    title: String,
+    subtitle: String,
+    skills: Object[],
+}
+
+const SKILL: Skill = {
+    title: "Skills",
+    subtitle: "My technical level",
+    skills: [{
+        images: ["figma.png"],
+        name: "Figma",
+        category: "Front-end developpement",
+        height: "50px",
+    }, {
+        images: ["react.svg"],
+        name: "ReactJS + React Native",
+        category: "UI Design, Prototype",
+        height: "50px",
+    }, {
+        images: ["mysql.png", "postgres.png"],
+        name: "Mysql + Postgres",
+        category: "Databases",
+        height: "50px",
+    }, {
+        images: ["php.png", "nodejs.png"],
+        name: "Php + NodeJS",
+        category: "Server-side languages",
+        height: "50px",
+    }, {
+        images: ["html.png"],
+        name: "HTML 5",
+        category: "Structural Design",
+        height: "50px",
+    }, {
+        images: ["css.png", "scss.png"],
+        name: "CSS 3 + SCSS",
+        category: "Style Design",
+        height: "60px",
+    }, {
+        images: ["laravel.svg"],
+        name: "Laravel",
+        category: "Frameworks and libraries",
+        height: "50px",
+    }, {
+        images: ["vscode.png"],
+        name: "VS Code",
+        category: "Code Editor",
+        height: "50px",
+    }, {
+        images: ["git.png"],
+        name: "Git",
+        category: "Version control",
+        height: "50px",
+    },],
+}
+
