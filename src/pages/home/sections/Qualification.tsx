@@ -13,7 +13,7 @@ export default function Qualification() {
             </div>
             <div>
                 <div className='line'>
-                    {QUALIFICATION.qualifications.map((value: Object, index: number): React.ReactNode => (<span className='round'></span>))}
+                    {QUALIFICATION.qualifications.map((value: Object, index: number): React.ReactNode => (<span className='round' key={index.toString()}></span>))}
                 </div>
                 {QUALIFICATION.qualifications.map(qualificationItem)}
             </div>
@@ -28,7 +28,7 @@ function categoryItem(category: Object, index: number, array: Object[]): React.R
     const width = Object.values(category)[2]
 
     return (
-        <div>
+        <div key={index.toString()}>
             <NourIcon id={icon} width={width} />
             <h2 className='h2'>{name}</h2>
         </div>
@@ -44,7 +44,7 @@ function qualificationItem(qualification: Object, index: number, array: Object[]
 
     const position = index % 2 == 0 ? 'left' : 'right'
     return (
-        <div className={`card-3 ${position}`}>
+        <div className={`card-3 ${position}`} key={index.toString()}>
             <div>
                 <h2 className='h2'>{title}</h2>
                 <a className='h2 gray-5' href='#'>{adress}</a>

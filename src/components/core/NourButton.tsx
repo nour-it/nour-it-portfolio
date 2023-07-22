@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function NourButton(props: any) {
 
   if (props.href) {
-    return <a {...props} className="btn">{props.children}</a>
+    return <Link {...props} className="btn">{props.children}</Link>
   }
   return (
     <button {...props} className="btn">{props.children}</button>

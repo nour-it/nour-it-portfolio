@@ -1,12 +1,18 @@
 import { RouteObject } from "react-router-dom";
 import HomeIndex from "./pages/home/HomeIndex";
+import ExperienceIndex from "./pages/experience/ExperienceIndex";
+import { URLS } from "./data/url";
 
-const routeObject: RouteObject[] = [
+
+export const routeObject: RouteObject[] = [
     {
-        path: "",
+        path: URLS.home,
         element: <HomeIndex />,
     },
-] 
+    {
+        path: URLS.experience,
+        element: <ExperienceIndex />,
+    },
+]
 
-export default routeObject;
 

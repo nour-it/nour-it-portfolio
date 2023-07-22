@@ -39,7 +39,7 @@ function contactItem(contact: Object, index: number, array: Object[]): React.Rea
     const link = Object.values(contact)[2]
     const icon = Object.values(contact)[3]
     const width = Object.values(contact)[4]
-    return <div className="border rounded">
+    return <div className="border rounded" key={index.toString()}>
         <NourIcon id={icon} width={width} />
         <h2 className="h2">{way}</h2>
         <span className="text-gray-2">{id}</span>

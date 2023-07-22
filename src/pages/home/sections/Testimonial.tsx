@@ -22,7 +22,7 @@ function clientItem(client: Object, index: number, array: Object[]): React.React
     const domain = Object.values(client)[1]
     const image = Object.values(client)[2]
     const message = Object.values(client)[3]
-    return <div className="shadow rounded">
+    return <div className="shadow rounded" key={index.toString()}>
         <p>{message}</p>
         <div>
             <div><img src={`/img/${image}`} alt="client" /></div>

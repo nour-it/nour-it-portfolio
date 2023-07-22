@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
-/**
- * 
- * @param {React.ReactElement.props} props 
- * @returns {JSX.Element}
- */
-export default function NourContainer(props) {
+
+export default function NourContainer(props: any) {
   
   const [state, setState] = useState({ mounted: false })
 
@@ -16,7 +12,7 @@ export default function NourContainer(props) {
     }
   }, [])
 
-  if (!state.mounted) return
+  if (!state.mounted) return <></>
   
   return (
     <div className='container' {...props}>{props.children}</div>

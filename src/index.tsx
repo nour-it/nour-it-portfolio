@@ -9,8 +9,10 @@ import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 
 // import { GoogleOAuthProvider } from '@react-oauth/google';
 
-import routeObject from './route';
 import reportWebVitals from './reportWebVitals';
+
+import './firebase'
+import { routeObject } from './route';
 
 
 
