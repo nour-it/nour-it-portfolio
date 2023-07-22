@@ -1,4 +1,5 @@
 import React from 'react'
+import NourIcon from '../../../components/core/NourIcon'
 
 export default function Qualification() {
     return (
@@ -28,9 +29,7 @@ function categoryItem(category: Object, index: number, array: Object[]): React.R
 
     return (
         <div>
-            <svg id={`${icon}`} width={width} height={width}>
-                <use xlinkHref={`/css/sprite.svg#${icon}`} />
-            </svg>
+            <NourIcon id={icon} width={width} />
             <h2 className='h2'>{name}</h2>
         </div>
     )
@@ -51,10 +50,7 @@ function qualificationItem(qualification: Object, index: number, array: Object[]
                 <a className='h2 gray-5' href='#'>{adress}</a>
             </div>
             <span className='text-gray-2'>
-                <svg id='calendar' width='18' height='18'>
-                    <use xlinkHref={`/css/sprite.svg#calendar`} />
-                </svg>
-                {period}
+                <NourIcon id={"calendar"} width={18} /> {period}
             </span>
         </div>
     )

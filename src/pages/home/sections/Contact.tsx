@@ -1,4 +1,6 @@
 import React from 'react'
+import NourButton from '../../../components/core/NourButton'
+import NourIcon from '../../../components/core/NourIcon'
 
 export default function Contact() {
     return (
@@ -10,44 +12,7 @@ export default function Contact() {
             <div>
                 <div>
                     <h2 className="h2">Talk to me</h2>
-                    <div className="border rounded">
-                        <svg id="email-svg" width="35" height="35">
-                            <use xlinkHref="/css/sprite.svg#email-svg" />
-                        </svg>
-                        <h2 className="h2">Email</h2>
-                        <span className="text-gray-2">reply.nour.it@gmail.com</span>
-                        <a href="mailto:reply.nour.it@gmail.com">
-                            <span>with me</span>
-                            <svg id="arrow-right-svg" width="15" height="15">
-                                <use xlinkHref="/css/sprite.svg#arrow-right-svg" />
-                            </svg>
-                        </a>
-                    </div>
-                    <div className="border rounded">
-                        <svg id="whatsapp-svg" width="37" height="37">
-                            <use xlinkHref="/css/sprite.svg#whatsapp-svg" />
-                        </svg>
-                        <h2 className="h2">Whatsapp</h2>
-                        <span className="text-gray-2">+228 91108834</span>
-                        <a href="https://wa.me/22891108834?text=salut">
-                            <span>with me</span>
-                            <svg id="arrow-right-svg" width="15" height="15">
-                                <use xlinkHref="/css/sprite.svg#arrow-right-svg" />
-                            </svg>
-                        </a>
-                    </div>
-                    <div className="border rounded">
-                        <svg id="messanger-svg" width="30" height="30">
-                            <use xlinkHref="/css/sprite.svg#messanger-svg" />
-                        </svg>
-                        <h2 className="h2">Messanger</h2><span className="text-gray-2">nourxxIt</span>
-                        <a href="https://www.facebook.com/nourxxIt/">
-                            <span>with me</span>
-                            <svg id="arrow-right-svg" width="15" height="15">
-                                <use xlinkHref="/css/sprite.svg#arrow-right-svg" />
-                            </svg>
-                        </a>
-                    </div>
+                    {CONTACT.contacts.map(contactItem)}
                 </div>
                 <div>
                     <h2 className="h2">Write to me</h2>
@@ -56,14 +21,67 @@ export default function Contact() {
                         <input type="email" name="email" id="email" className="border rounded" placeholder="Insert you email" />
                         <textarea name="project" id="project" cols={30} rows={10} className="border rounded"
                             placeholder="Write your project"></textarea>
-                        <button type="submit" className="btn">send message
-                            <svg width="24" height="24">
-                                <use xlinkHref="/css/sprite.svg#prime_send-svg" />
-                            </svg>
-                        </button>
-                        </form>
-                    </div>
+                        <NourButton type="submit">
+                            send message
+                            <NourIcon id={`prime_send-svg`} />
+                        </NourButton>
+                    </form>
                 </div>
+            </div>
         </section>
     )
 }
+
+
+function contactItem(contact: Object, index: number, array: Object[]): React.ReactNode {
+    const way = Object.values(contact)[0]
+    const id = Object.values(contact)[1]
+    const link = Object.values(contact)[2]
+    const icon = Object.values(contact)[3]
+    const width = Object.values(contact)[4]
+    return <div className="border rounded">
+        <NourIcon id={icon} width={width} />
+        <h2 className="h2">{way}</h2>
+        <span className="text-gray-2">{id}</span>
+        <a href={link}>
+            <span>with me</span>
+            <NourIcon id={"arrow-right-svg"} width={15} />
+        </a>
+    </div>
+}
+
+
+type Contact = {
+    title: String,
+    subtitle: String,
+    contacts: Object[],
+}
+
+const CONTACT: Contact = {
+    title: "Service",
+    subtitle: "What i offer",
+    contacts: [
+        {
+            way: "Email",
+            id: "reply.nour.it@gmail.com",
+            link: "mailto:reply.nour.it@gmail.com",
+            icon: "email-svg",
+            width: "35",
+        },
+        {
+            way: "Whatsapp",
+            id: "+228 91108834",
+            link: "https://wa.me/22891108834?text=salut",
+            icon: "whatsapp-svg",
+            width: "35",
+        },
+        {
+            way: "Messanger",
+            id: "nourxxIt",
+            link: "https://www.facebook.com/nourxxIt/",
+            icon: "messanger-svg",
+            width: "35",
+        },
+    ],
+}
+

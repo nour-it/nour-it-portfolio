@@ -1,4 +1,6 @@
 import React from 'react'
+import NourButton from '../../../components/core/NourButton'
+import NourIcon from '../../../components/core/NourIcon'
 
 export default function Intro() {
   return (
@@ -11,12 +13,10 @@ export default function Intro() {
         <div>
            {intro.descriptions.map((value: String, index: number, array: String[]): React.ReactNode => <p key={index.toString()}>{value}</p>)}
         </div>
-        <a href="#contact" className="btn">
+        <NourButton href="#contact">
           say Hello
-          <svg width="24" height="24">
-            <use xlinkHref="/css/sprite.svg#prime_send-svg" />
-          </svg>
-        </a>
+          <NourIcon id={"prime_send-svg"} width={24}/>
+        </NourButton>
       </div>
       <div><img src="/img/logo512.png" alt="user"/></div>
     </section>

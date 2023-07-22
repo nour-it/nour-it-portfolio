@@ -1,4 +1,5 @@
 import React from 'react'
+import NourIcon from '../../../components/core/NourIcon'
 
 export default function Service() {
     return (
@@ -17,15 +18,11 @@ export default function Service() {
 function serviceItem(service: Object, index: number, array: Object[]): React.ReactNode {
     const { icon, value, width } = Object.values(service)[0]
     return <div className="border rounded">
-        <svg id="web-svg" width={width} height={width}>
-            <use xlinkHref={`/css/sprite.svg#${icon}`} />
-        </svg>
+        <NourIcon id={icon} width={width} />
         <h2 className="h2">{Object.keys(service)[0]}</h2>
         <a href='#'>
             <span className="text-gray-2">view more</span>
-            <svg id="arrow-right-svg" width="15" height="15">
-                <use xlinkHref="/css/sprite.svg#arrow-right-svg" />
-            </svg>
+            <NourIcon id={'arrow-right-svg'} width="15" />
         </a>
     </div>
 }

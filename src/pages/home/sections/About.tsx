@@ -1,4 +1,6 @@
 import React from 'react'
+import NourButton from '../../../components/core/NourButton'
+import NourIcon from '../../../components/core/NourIcon'
 
 export default function About() {
     return (
@@ -12,12 +14,10 @@ export default function About() {
                 <div>
                     <div>{ABOUT.abouts.map(aboutItem)}</div>
                     <p>{ABOUT.previousRole}</p>
-                    <a href={ABOUT.resumeLink} className="btn">
+                    <NourButton href={ABOUT.resumeLink} >
                         Download CV
-                        <svg id="docuemt-svg" width="24" height="24">
-                            <use xlinkHref="/css/sprite.svg#docuemt-svg" />
-                        </svg>
-                    </a>
+                        <NourIcon id={`docuemt-svg`} width={24} />
+                    </NourButton>
                 </div>
             </div>
         </section>
@@ -27,9 +27,7 @@ export default function About() {
 function aboutItem(about: Object, index: number, array: Object[]): React.ReactNode {
     const { icon, value, width } = Object.values(about)[0]
     return <div className="card-1 border rounded" key={index.toString()}>
-        <svg width={width} height={width}>
-            <use xlinkHref={`/css/sprite.svg#${icon}`} />
-        </svg>
+        <NourIcon id={icon} width={width} />
         <p className="text-gray-1">{Object.keys(about)[0]}</p>
         <span className="text-gray-2">{value}</span>
     </div>
