@@ -1,82 +1,111 @@
 import React from 'react'
 
 export default function Qualification() {
-  return (
-    <section className="section_qualification" id="blog">
-      <div>
-        <h1 className="h1">Qualification</h1>
-        <p className="text-gray-1">My personal journey</p>
-      </div>
-      <div>
+    return (
+        <section className='section_qualification' id='blog'>
+            <div>
+                <h1 className='h1'>{QUALIFICATION.title}</h1>
+                <p className='text-gray-1'>{QUALIFICATION.subtitle}</p>
+            </div>
+            <div>
+                {QUALIFICATION.categories.map(categoryItem)}
+            </div>
+            <div>
+                <div className='line'>
+                    {QUALIFICATION.qualifications.map((value: Object, index: number): React.ReactNode => (<span className='round'></span>))}
+                </div>
+                {QUALIFICATION.qualifications.map(qualificationItem)}
+            </div>
+        </section>
+    )
+}
+
+
+function categoryItem(category: Object, index: number, array: Object[]): React.ReactNode {
+    const name = Object.values(category)[0]
+    const icon = Object.values(category)[1]
+    const width = Object.values(category)[2]
+
+    return (
         <div>
-          <svg id="hat-svg" width="36" height="31">
-            <use xlinkHref="/css/sprite.svg#hat-svg" />
-          </svg>
-          <h2 className="h2">Education</h2>
-        </div>
-        <div>
-          <svg id="bag-svg" width="27" height="31">
-            <use xlinkHref="/css/sprite.svg#bag-svg" />
-          </svg>
-          <h2 className="h2">Experience</h2>
-        </div>
-      </div>
-      <div>
-        <div className="line">
-          <span className="round"></span>
-          <span className="round"></span>
-          <span className="round"></span>
-          <span className="round"></span>
-        </div>
-        <div className="card-3 left">
-          <div>
-            <h2 className="h2">scientific secondary school diploma</h2>
-            <p className="h2 gray-5">CPAP, Lome-Togo</p>
-          </div>
-          <span className="text-gray-2">
-            <svg id="calendar" width="18" height="18">
-              <use xlinkHref="/css/sprite.svg#calendar" />
+            <svg id={`${icon}`} width={width} height={width}>
+                <use xlinkHref={`/css/sprite.svg#${icon}`} />
             </svg>
-            2017-2018
-          </span>
+            <h2 className='h2'>{name}</h2>
         </div>
-        <div className="card-3 right">
-          <div>
-            <h2 className="h2">company internship</h2>
-            <p className="h2 gray-5">Tixpros, Lome-Togo</p>
-          </div>
-          <span className="text-gray-2">
-            <svg id="calendar" width="18" height="18">
-              <use xlinkHref="/css/sprite.svg#calendar" />
-            </svg>
-            Oct 2021 - Dec 2021
-          </span>
+    )
+}
+
+
+function qualificationItem(qualification: Object, index: number, array: Object[]): React.ReactNode {
+    const title = Object.values(qualification)[0]
+    const adress = Object.values(qualification)[1]
+    const icon = Object.values(qualification)[2]
+    const period = Object.values(qualification)[3]
+
+    const position = index % 2 == 0 ? 'left' : 'right'
+    return (
+        <div className={`card-3 ${position}`}>
+            <div>
+                <h2 className='h2'>{title}</h2>
+                <a className='h2 gray-5' href='#'>{adress}</a>
+            </div>
+            <span className='text-gray-2'>
+                <svg id='calendar' width='18' height='18'>
+                    <use xlinkHref={`/css/sprite.svg#calendar`} />
+                </svg>
+                {period}
+            </span>
         </div>
-        <div className="card-3 left">
-          <div>
-            <h2 className="h2">Bachelor in Application Development</h2>
-            <p className="h2 gray-5">Lome-Togo</p>
-          </div>
-          <span className="text-gray-2">
-            <svg id="calendar" width="18" height="18">
-              <use xlinkHref="/css/sprite.svg#calendar" />
-            </svg>
-            2022-2023
-          </span>
-        </div>
-        <div className="card-3 right">
-          <div>
-            <h2 className="h2">Freelance</h2>
-            <p className="h2 gray-5">Lome-Togo</p>
-          </div>
-          <span className="text-gray-2">
-            <svg id="calendar" width="18" height="18">
-              <use xlinkHref="/css/sprite.svg#calendar" />
-            </svg>
-            2022 - now
-          </span>
-        </div>
-      </div>
-    </section>
-  )
+    )
+}
+
+type Qualificaton = {
+    title: String
+    subtitle: String
+    categories: Object[]
+    qualifications: Object[]
+}
+
+const QUALIFICATION: Qualificaton = {
+    title: 'Qualification',
+    subtitle: 'My personal journey',
+    categories: [
+        {
+            name: "Education",
+            icon: "hat-svg",
+            width: '36',
+        },
+        {
+            name: "Experience",
+            icon: 'bag-svg',
+            width: '31',
+        },
+    ],
+    qualifications: [
+        {
+            title: 'scientific secondary school diploma',
+            adress: 'CPAP, Lome-Togo',
+            icon: 'calendar',
+            period: '2017-2018'
+        },
+        {
+            title: 'company internship',
+            adress: 'Tixpros, Lome-Togo',
+            icon: 'calendar',
+            period: 'Oct 2021 - Dec 2021'
+        },
+        {
+            title: 'Bachelor in Application Development',
+            adress: 'Lome-Togo',
+            icon: 'calendar',
+            period: '2022-2023'
+        },
+        {
+            title: 'Freelance',
+            adress: 'Lome-Togo',
+            icon: 'calendar',
+            period: '2022 - now'
+        }
+    ]
 }
