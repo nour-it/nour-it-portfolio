@@ -8,31 +8,31 @@
 
 @font-face {
   font-family: "DMSans";
-  src: url(/css/font/DM_Sans/DMSans-Bold.ttf) format("truetype");
+  src: url(./font/DM_Sans/DMSans-Bold.ttf) format("truetype");
   font-weight: bold;
 }
 
 @font-face {
   font-family: Manrope;
-  src: url(/css/font/Manrope/static/Manrope-Regular.ttf) format("truetype");
+  src: url(./font/Manrope/static/Manrope-Regular.ttf) format("truetype");
   font-weight: 400;
 }
 
 @font-face {
   font-family: Manrope;
-  src: url(/css/font/Manrope/static/Manrope-Medium.ttf) format("truetype");
+  src: url(./font/Manrope/static/Manrope-Medium.ttf) format("truetype");
   font-weight: 500;
 }
 
 @font-face {
   font-family: Manrope;
-  src: url(/css/font/Manrope/static/Manrope-Bold.ttf) format("truetype");
+  src: url(./font/Manrope/static/Manrope-Bold.ttf) format("truetype");
   font-weight: bold;
 }
 
 @font-face {
   font-family: Manrope;
-  src: url(/css/font/Manrope/static/Manrope-ExtraBold.ttf) format("truetype");
+  src: url(./font/Manrope/static/Manrope-ExtraBold.ttf) format("truetype");
   font-weight: bolder;
 }
 

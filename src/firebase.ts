@@ -10,14 +10,13 @@ const firebaseConfig = {
 };
 
 
-console.log(process.env)
+// console.log(process.env)
 
 if (process.env.NODE_ENV != 'development') {
     import("firebase/app")
         .then((app) => {
             import("firebase/analytics")
                 .then((analytics) => {
-                    console.log(app, analytics)
                     analytics.getAnalytics(app.initializeApp(firebaseConfig));
                 })
                 .catch((error) => {

@@ -1,19 +1,10 @@
-import React, { ReactNode, useEffect, useState } from 'react'
+import React, { ReactNode, useEffect, useState, useLayoutEffect } from 'react'
 
 export default function HomeHeader() {
 
 	const [state, setState] = useState({ mounted: false })
 
 	useEffect(() => {
-		const $navLinks = document.querySelectorAll('header nav li');
-		function onClickNavLink(e: any) {
-			$navLinks.forEach(($navLink) => $navLink.classList.remove("active"))
-			e.currentTarget?.classList.add("active")
-		}
-
-		$navLinks.forEach(($navLink, index) => {
-			$navLink.addEventListener('click', onClickNavLink)
-		})
 
 		setState((state) => ({ ...state, mounted: true }))
 		return () => {
@@ -22,6 +13,18 @@ export default function HomeHeader() {
 	}, [])
 
 	if (!state.mounted) return <></>
+
+	setTimeout(function () {
+		const $navLinks = document.querySelectorAll('header nav li');
+		function onClickNavLink(e: any) {
+			$navLinks.forEach(($navLink) => $navLink.classList.remove("active"))
+			e.currentTarget.classList.add("active")
+		}
+
+		$navLinks.forEach(($navLink, index) => {
+			$navLink.addEventListener('click', onClickNavLink)
+		})
+	}, 1000)
 
 	return (
 		<header className="header">

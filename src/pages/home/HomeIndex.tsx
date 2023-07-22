@@ -12,18 +12,20 @@ import Contact from './sections/Contact'
 import HomeFooter from '../../components/footer/HomeFooter'
 
 export default function HomeIndex() {
+  const userPreferredLanguage = navigator.language || "en-EN";
+
   return (
     <NourContainer>
-        <HomeHeader/>
-        <Intro/>
-        <Separator/>
-        <About/>
-        <Service/>
-        <Skills/>
-        <Qualification/>
-        <Testimonial/>
-        <Contact/>
-        <HomeFooter/>
+      <HomeHeader />
+      <Intro />
+      <Separator />
+      <About />  
+      <Service />
+      <Skills />
+      <Qualification />
+      <Testimonial />
+      <Contact />
+      <HomeFooter />
     </NourContainer>
   )
 }

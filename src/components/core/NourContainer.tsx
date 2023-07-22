@@ -15,6 +15,6 @@ export default function NourContainer(props: any) {
   if (!state.mounted) return <></>
   
   return (
-    <div className='container' {...props}>{props.children}</div>
+    <div  {...props} className={`container ${props.className || ""}`}>{props.children}</div>
   )
 }

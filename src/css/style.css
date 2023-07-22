@@ -1,13 +1,13 @@
-@import url(/css/reset.css);
-@import url(/css/partials/top-bar.css);
-@import url(/css/partials/intro.css);
-@import url(/css/partials/about.css);
-@import url(/css/partials/skills.css);
-@import url(/css/partials/service.css);
-@import url(/css/partials/qualification.css);
-@import url(/css/partials/testimonial.css);
-@import url(/css/partials/contact.css);
-@import url(/css/partials/footer.css);
+@import url(./reset.css);
+@import url(./partials/top-bar.css);
+@import url(./partials/intro.css);
+@import url(./partials/about.css);
+@import url(./partials/skills.css);
+@import url(./partials/service.css);
+@import url(./partials/qualification.css);
+@import url(./partials/testimonial.css);
+@import url(./partials/contact.css);
+@import url(./partials/footer.css);
 
 body {
   min-height: 100vh;

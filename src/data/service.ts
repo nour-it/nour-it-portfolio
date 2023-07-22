@@ -1,16 +1,9 @@
 // import { URLS } from "../route"
 
+import { Service } from "../type"
 import { URLS } from "./url"
 
-type Service = {
-    title: String,
-    subtitle: String,
-    services: Object[],
-    previousRole: String,
-    resumeLink: string,
-}
-
-export const SERVICE: Service = {
+let service: Service = {
     title: "Service",
     subtitle: "What i offer",
     services: [{
@@ -42,3 +35,4 @@ export const SERVICE: Service = {
     resumeLink: `https://firebasestorage.googleapis.com/v0/b/nour-it-portfolio.appspot.com/o/cv-seydou-nouroudine.docx?alt=media&token=21189ea6-2de1-407f-9cc6-32f79cc1f57e`
 } 
 
+export const SERVICE = service

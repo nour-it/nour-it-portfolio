@@ -1,7 +1,10 @@
 import React from 'react'
+import NourContainer from '../../components/core/NourContainer'
 
 export default function ExperienceIndex() {
   return (
-    <div>ExperienceIndex</div>
+    <NourContainer className='slide-right'>
+      experience index
+    </NourContainer>
   )
 }
