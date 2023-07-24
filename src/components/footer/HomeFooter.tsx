@@ -24,24 +24,36 @@ export default function HomeFooter() {
           <li className="h2">Services</li>
         </ul>
         <ul>
-          <li>
-            <a href="https://www.facebook.com/nourxxIt/">
-              <img src="/img/facebook.png" alt="facebook" />
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/nour_it_" data-screen-name="@nour_it_">
-              <img src="/img/twitter.png" alt="twitter" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/nour-it/">
-              <img src="/img/linkedin.png" alt="linkedin" />
-            </a>
-          </li>
-          <li><img src="/img/instagram.png" alt="instagram" /></li>
+          {FOOTER_ITEM.map(footerItem)}
         </ul>
       </nav><span className="copy-right">@nourit. All rights reserved</span>
     </footer>
   )
 }
+
+function footerItem(item: any, index: number, array: String[]): React.ReactNode {
+  return <li key={index.toString()}>
+    <a href={item.link}>
+      <img src={`/img/social/${item.img}`} alt="linkedin" height={32}/>
+    </a>
+  </li>
+}
+
+const FOOTER_ITEM: any[] = [
+  {
+    img: "Facebook.svg",
+    link: "https://www.facebook.com/nourxxIt/"
+  },
+  {
+    img: "Twitter.svg",
+    link: "https://twitter.com/nour_it_"
+  },
+  {
+    img: "Linkedin.svg",
+    link: "https://www.linkedin.com/in/nour-it/"
+  },
+  {
+    img: "Instagram.svg",
+    link: "https://www.instagram.com/nour.it.ng/"
+  },
+]

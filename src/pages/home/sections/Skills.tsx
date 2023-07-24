@@ -22,7 +22,7 @@ function skillItem(skill: Object, index: number, array: Object[]): React.ReactNo
     const height = Object.values(skill)[3];
     return <div className="card-1 border" key={index.toString()} >
         <div>
-            {images.map((img: string, i: number) => <img src={`/img/${img}`} alt="" key={index.toString() + i.toString()} height={height} />)}
+            {images.map((img: string, i: number) => <img src={`/img/skill/${img}`} alt="" key={index.toString() + i.toString()} height={height} />)}
         </div>
         <p className="text-black-3">{name}</p>
         <span className="text-gray-3">{category}</span>

@@ -25,7 +25,7 @@ function clientItem(client: Object, index: number, array: Object[]): React.React
     return <div className="shadow rounded" key={index.toString()}>
         <p>{message}</p>
         <div>
-            <div><img src={`/img/${image}`} alt="client" /></div>
+            <div><img src={`/img/client/${image}`} alt="client" /></div>
             <div>
                 <span className="text-orange-1">{name}</span>
                 <span className="text-orange-2">{domain}</span>

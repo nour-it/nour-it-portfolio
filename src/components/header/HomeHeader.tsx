@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState, useLayoutEffect } from 'react'
+import React, { ReactNode, useEffect, useState, useLayoutEffect, useReducer, useRef, MouseEventHandler } from 'react'
 
 export default function HomeHeader() {
 
@@ -15,6 +15,7 @@ export default function HomeHeader() {
 	if (!state.mounted) return <></>
 
 	setTimeout(function () {
+	
 		const $navLinks = document.querySelectorAll('header nav li');
 		function onClickNavLink(e: any) {
 			$navLinks.forEach(($navLink) => $navLink.classList.remove("active"))
@@ -26,15 +27,34 @@ export default function HomeHeader() {
 		})
 	}, 1000)
 
+	function onActiveNav(e: React.MouseEvent) {
+		const $header: any | HTMLElement = document.querySelector('header');
+		// const $burger: any = document.querySelector('.burger');
+		const $headerNav: any = document.querySelector('header nav');
+		// const target = e.target as HTMLElement
+		if (window.innerWidth < 745) {
+			if ($headerNav.classList.contains("active")) {
+				document.body.style.overflow = "auto"
+			} else {
+				document.body.style.overflow = "hidden"
+			}
+			$header.classList.toggle("blur")
+			$headerNav.classList.toggle("active")
+			$headerNav.classList.toggle("blur")
+		}
+	}
+
 	return (
-		<header className="header">
+		<header className="header" >
 			<div className="logo">Nour<span>It</span></div>
-			<nav>
-				<ul>
+			<nav onClick={onActiveNav}>
+				<ul >
 					{MENU_ITEMS.map(menuItem)}
 				</ul>
 			</nav>
-			<div className="burger"></div>
+			<div className="burger__wrapper" onClick={onActiveNav}>
+				<div className="burger" ></div>
+			</div>
 		</header>
 	)
 }

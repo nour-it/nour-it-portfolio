@@ -15,9 +15,9 @@ import './firebase'
 import { routeObject } from './route';
 
 
-
-
 const router = createBrowserRouter(routeObject);
+
+// console.log("ok")
 
 const root = ReactDOM.createRoot(document.getElementById('root') as Element);
 root.render(

@@ -1,0 +1,29 @@
+.slide-right {
+  animation: slide_right 2s;
+}
+
+@keyframes slide_right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.slide-right-2 {
+  animation: slide_right 3s;
+}
+
+@keyframes slide_righ_2 {
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: visible;
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
