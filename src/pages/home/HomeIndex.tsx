@@ -12,18 +12,25 @@ import Contact from './sections/Contact'
 import HomeFooter from '../../components/footer/HomeFooter'
 
 export default function HomeIndex() {
-  const userPreferredLanguage = navigator.language || "en-EN";
+  
+  const space = "calc(var(--space) * 12)";
 
   return (
     <NourContainer>
       <HomeHeader />
       <Intro />
       <Separator />
+      <div style={{marginBottom: space}} id="about"/>
       <About />  
+      <div style={{marginBottom: space}} id="service"/>
       <Service />
+      <div style={{marginBottom: space}} id="skills"/>
       <Skills />
+      <div style={{marginBottom: space}} id='blog'/>
       <Qualification />
+      <div style={{marginBottom: space}}/>
       <Testimonial />
+      <div style={{marginBottom: space}} id="contact"/>
       <Contact />
       <HomeFooter />
     </NourContainer>

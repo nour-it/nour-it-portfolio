@@ -1,28 +1,36 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import NourButton from '../../../components/core/NourButton'
 import NourIcon from '../../../components/core/NourIcon'
+import { CONTACT } from '../../../data/contact';
 
 export default function Contact() {
+
+    const contactFormRef = useRef(null);
+
+    function onSubmitContactForm(e: React.FormEvent) {
+        e.preventDefault();
+    }
+
     return (
-        <section className="section_contact" id="contact">
+        <section className="section_contact" >
             <div>
-                <h1 className="h1">Contact Me</h1>
-                <p className="text-gray-1">get in touch</p>
+                <h1 className="h1">{CONTACT.title}</h1>
+                <p className="text-gray-1">{CONTACT.subtitle}</p>
             </div>
             <div>
                 <div>
-                    <h2 className="h2">Talk to me</h2>
+                    <h2 className="h2">{CONTACT.talk}</h2>
                     {CONTACT.contacts.map(contactItem)}
                 </div>
                 <div>
-                    <h2 className="h2">Write to me</h2>
-                    <form action="" method="post">
-                        <input name="name" id="name" className="border rounded" placeholder="Insert you name" />
-                        <input type="email" name="email" id="email" className="border rounded" placeholder="Insert you email" />
+                    <h2 className="h2">{CONTACT.write}</h2>
+                    <form action="" method="post" onSubmit={onSubmitContactForm} ref={contactFormRef}>
+                        <input name="name" id="name" className="border rounded" placeholder={CONTACT.form.name} />
+                        <input type="email" name="email" id="email" className="border rounded" placeholder={CONTACT.form.email} />
                         <textarea name="project" id="project" cols={30} rows={10} className="border rounded"
-                            placeholder="Write your project"></textarea>
+                            placeholder={CONTACT.form.message}></textarea>
                         <NourButton type="submit">
-                            send message
+                            {CONTACT.send}
                             <NourIcon id={`prime_send-svg`} />
                         </NourButton>
                     </form>
@@ -44,44 +52,8 @@ function contactItem(contact: Object, index: number, array: Object[]): React.Rea
         <h2 className="h2">{way}</h2>
         <span className="text-gray-2">{id}</span>
         <a href={link}>
-            <span>with me</span>
+            <span>{CONTACT.with}</span>
             <NourIcon id={"arrow-right-svg"} width={15} />
         </a>
     </div>
 }
-
-
-type Contact = {
-    title: String,
-    subtitle: String,
-    contacts: Object[],
-}
-
-const CONTACT: Contact = {
-    title: "Service",
-    subtitle: "What i offer",
-    contacts: [
-        {
-            way: "Email",
-            id: "reply.nour.it@gmail.com",
-            link: "mailto:reply.nour.it@gmail.com",
-            icon: "email-svg",
-            width: "35",
-        },
-        {
-            way: "Whatsapp",
-            id: "+228 91108834",
-            link: "https://wa.me/22891108834?text=salut",
-            icon: "whatsapp-svg",
-            width: "35",
-        },
-        {
-            way: "Messanger",
-            id: "nourxxIt",
-            link: "https://www.facebook.com/nourxxIt/",
-            icon: "messanger-svg",
-            width: "35",
-        },
-    ],
-}
-

@@ -2,6 +2,7 @@ import React, { ReactNode, useEffect, useState, useLayoutEffect, useReducer, use
 
 export default function HomeHeader() {
 
+
 	const [state, setState] = useState({ mounted: false })
 
 	useEffect(() => {
@@ -49,7 +50,7 @@ export default function HomeHeader() {
 			<div className="logo">Nour<span>It</span></div>
 			<nav onClick={onActiveNav}>
 				<ul >
-					{MENU_ITEMS.map(menuItem)}
+					{Object.keys(MENU_ITEMS).map(menuItem)}
 				</ul>
 			</nav>
 			<div className="burger__wrapper" onClick={onActiveNav}>
@@ -59,19 +60,25 @@ export default function HomeHeader() {
 	)
 }
 
-function menuItem(value: String, index: number, array: String[]): React.ReactNode {
+function menuItem(value: any, index: number, array: any[]): React.ReactNode {
+	
 	const isActive = window.location.hash == `#${value}`
 	return <li className={`text-black-1 ${isActive ? "active" : ""}`} key={index.toString()}>
-		<a href={`#${value.toLocaleLowerCase()}`}>{value.replace(value.charAt(0), value.charAt(0).toLocaleUpperCase())}</a>
+		<a href={`#${value.toLocaleLowerCase()}`}>{MENU_ITEMS[value].replace(MENU_ITEMS[value].charAt(0), MENU_ITEMS[value].charAt(0).toLocaleUpperCase())}</a>
 	</li>
 }
 
+const content: any = {
+	en: {
+		'home': 'home',
+		'about': 'about',
+		'service': 'service',
+		'skills': 'Skills',
+		'blog': 'Blog',
+		'contact': 'Contact',
+	}
+}
 
-const MENU_ITEMS: String[] = [
-	'home',
-	'about',
-	'service',
-	'Skills',
-	'Blog',
-	'Contact',
-]
+const userPreferredLanguage = navigator.language || 'en-EN'
+const MENU_ITEMS: any =  content[userPreferredLanguage.split('-')[0]] || content.en 
+

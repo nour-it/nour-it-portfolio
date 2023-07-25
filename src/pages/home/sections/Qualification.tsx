@@ -1,9 +1,10 @@
 import React from 'react'
 import NourIcon from '../../../components/core/NourIcon'
+import { QUALIFICATION } from '../../../data/qualification'
 
 export default function Qualification() {
     return (
-        <section className='section_qualification' id='blog'>
+        <section className='section_qualification' >
             <div>
                 <h1 className='h1'>{QUALIFICATION.title}</h1>
                 <p className='text-gray-1'>{QUALIFICATION.subtitle}</p>
@@ -54,54 +55,4 @@ function qualificationItem(qualification: Object, index: number, array: Object[]
             </span>
         </div>
     )
-}
-
-type Qualificaton = {
-    title: String
-    subtitle: String
-    categories: Object[]
-    qualifications: Object[]
-}
-
-const QUALIFICATION: Qualificaton = {
-    title: 'Qualification',
-    subtitle: 'My personal journey',
-    categories: [
-        {
-            name: "Education",
-            icon: "hat-svg",
-            width: '36',
-        },
-        {
-            name: "Experience",
-            icon: 'bag-svg',
-            width: '31',
-        },
-    ],
-    qualifications: [
-        {
-            title: 'scientific secondary school diploma',
-            adress: 'CPAP, Lome-Togo',
-            icon: 'calendar',
-            period: '2017-2018'
-        },
-        {
-            title: 'company internship',
-            adress: 'Tixpros, Lome-Togo',
-            icon: 'calendar',
-            period: 'Oct 2021 - Dec 2021'
-        },
-        {
-            title: 'Bachelor in Application Development',
-            adress: 'Lome-Togo',
-            icon: 'calendar',
-            period: '2022-2023'
-        },
-        {
-            title: 'Freelance',
-            adress: 'Lome-Togo',
-            icon: 'calendar',
-            period: '2022 - now'
-        }
-    ]
 }

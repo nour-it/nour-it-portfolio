@@ -27,3 +27,23 @@
     transform: translateX(0);
   }
 }
+
+.center {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.experience {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (width > 700px) {
+  
+  .experience {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+  }
+}

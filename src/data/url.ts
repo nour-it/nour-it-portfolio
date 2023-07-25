@@ -1,5 +1,5 @@
 
 export let URLS = {
-    home: "",
+    home: "/",
     experience: "/experience"
 }

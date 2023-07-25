@@ -1,5 +1,5 @@
 .section__about {
-  margin-top: calc(var(--space) * 4);
+  /* margin-top: calc(var(--space) * 4); */
 }
 
 .section__about div {
@@ -54,7 +54,7 @@
 
 @media (width > 765px) {
   .section__about {
-    margin-top: calc(var(--space) * 7);
+    /* margin-top: calc(var(--space) * 7); */
   }
 
   .section__about>div:nth-child(1) {

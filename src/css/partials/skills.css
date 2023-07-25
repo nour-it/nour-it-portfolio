@@ -1,5 +1,5 @@
 .section_skills {
-  margin-bottom: calc(var(--space) * 10);
+  /* margin-bottom: calc(var(--space) * 10); */
 }
 
 .section_skills>div:nth-child(2) {

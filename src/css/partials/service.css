@@ -1,5 +1,5 @@
 .section_service {
-  margin-bottom: calc(var(--space) * 10);
+  /* margin-bottom: calc(var(--space) * 10); */
 }
 
 .section_service>div:nth-child(2) {

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function NourButton(props: any) {
 
-  if (props.href) {
+  if (props.href || props.to) {
     return <Link {...props} className="btn">{props.children}</Link>
   }
   return (
