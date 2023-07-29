@@ -1,20 +1,13 @@
-import { Qualificaton } from "../type"
+import { getContent } from "../../function"
+import { Qualificaton } from "../../type"
 
 let content: any = {
     en: {
         title: 'Qualification',
         subtitle: 'My personal journey',
         categories: [
-            {
-                name: "Education",
-                icon: "hat-svg",
-                width: '36',
-            },
-            {
-                name: "Experience",
-                icon: 'bag-svg',
-                width: '31',
-            },
+            { name: "Education", icon: "hat-svg", width: '36', },
+            { name: "Experience", icon: 'bag-svg', width: '31', },
         ],
         qualifications: [
             {
@@ -47,16 +40,8 @@ let content: any = {
         title: 'Qualification',
         subtitle: 'Mon parcours personnel',
         categories: [
-            {
-                name: "Education",
-                icon: "hat-svg",
-                width: '36',
-            },
-            {
-                name: "Expérience",
-                icon: 'bag-svg',
-                width: '31',
-            },
+            { name: "Education", icon: "hat-svg", width: '36', },
+            { name: "Expérience", icon: 'bag-svg', width: '31', },
         ],
         qualifications: [
             {
@@ -88,6 +73,4 @@ let content: any = {
 
 }
 
-
-const userPreferredLanguage = navigator.language || 'en-EN'
-export const QUALIFICATION: Qualificaton = content[userPreferredLanguage.split('-')[0]] || content.en
+export const QUALIFICATION: Qualificaton =  getContent(content)

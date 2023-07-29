@@ -24,3 +24,5 @@ yarn-error.log*
 .firebase
 .firebaserc
 package-lock.json
+firebase.json
+/src/firebase.ts

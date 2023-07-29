@@ -2,7 +2,7 @@ import React from 'react'
 import NourButton from '../../../components/core/NourButton'
 import NourIcon from '../../../components/core/NourIcon'
 
-import {intro} from '../../../data/intro'
+import {intro} from '../../../data/home/intro'
 
 export default function Intro() {
   return (

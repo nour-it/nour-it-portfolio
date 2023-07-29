@@ -1,5 +1,5 @@
 import React from 'react'
-import { CLIENT } from '../../../data/testimonial'
+import { CLIENT } from '../../../data/home/testimonial'
 
 export default function Testimonial() {
     return (

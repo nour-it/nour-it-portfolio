@@ -5,9 +5,6 @@ import { URLS } from '../../data/url'
 
 export default function ExperienceHeader() {
 
-	console.log(window.history)
-
-
 	return (
 		<header className="header">
 			<Link to={URLS.home} className='center'>

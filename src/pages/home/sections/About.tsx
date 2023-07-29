@@ -1,7 +1,7 @@
 import React from 'react'
 import NourButton from '../../../components/core/NourButton'
 import NourIcon from '../../../components/core/NourIcon'
-import { ABOUT } from '../../../data/about'
+import { ABOUT } from '../../../data/home/about'
 
 export default function About() {
     return (

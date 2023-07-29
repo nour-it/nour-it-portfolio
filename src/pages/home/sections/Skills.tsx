@@ -1,5 +1,5 @@
 import React from 'react'
-import { SKILL } from '../../../data/skill';
+import { SKILL } from '../../../data/home/skill';
 
 export default function Skills() {
     return (

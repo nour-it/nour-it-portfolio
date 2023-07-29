@@ -1,11 +1,11 @@
 import React from 'react'
 import NourIcon from '../../../components/core/NourIcon'
-import { SERVICE } from '../../../data/service'
+import { SERVICE } from '../../../data/home/service'
 import { Link } from 'react-router-dom'
 
 
 function serviceItem(service: Object, index: number, array: Object[]): React.ReactNode {
-    const { icon, value, width, url } = Object.values(service)[0]
+    const { icon, width, url } = Object.values(service)[0]
     return <div className="border rounded" key={index.toString()}>
         <NourIcon id={icon} width={width} />
         <h2 className="h2">{Object.keys(service)[0]}</h2>

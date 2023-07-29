@@ -25,16 +25,16 @@ export default function HomeFooter() {
         <ul>
           {FOOTER.menu2item.map(footerItem2)}
         </ul>
-      </nav><span className="copy-right">@nourit. All rights reserved</span>
+      </nav><span className="copy-right">@krish4alex. All rights reserved</span>
     </footer>
   )
 }
 
 function footerItem1(item: any, index: number, array: String[]): React.ReactNode {
   return <li className="h2" key={index.toString()}>
-    <a href={item.link}>
+    <Link to={item.link}>
       {item.val}
-    </a>
+    </Link>
   </li>
 }
 
@@ -51,7 +51,7 @@ const content: any = {
     menu1item: [
       {
         val: "About",
-        link: "#about"
+        link: "/#about"
       },
       {
         val: "Projects",

@@ -1,4 +1,5 @@
-import { Skill } from "../type"
+import { getContent } from "../../function"
+import { Skill } from "../../type"
 
 
 const content: any = {
@@ -105,7 +106,6 @@ const content: any = {
 }
 
 
-const userPreferredLanguage = navigator.language || 'en-EN'
-export const SKILL: Skill =  content[userPreferredLanguage.split('-')[0]] || content.en
+export const SKILL: Skill =   getContent(content)
 
 

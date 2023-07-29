@@ -1,6 +1,6 @@
 import React from 'react'
 import NourIcon from '../../../components/core/NourIcon'
-import { QUALIFICATION } from '../../../data/qualification'
+import { QUALIFICATION } from '../../../data/home/qualification'
 
 export default function Qualification() {
     return (

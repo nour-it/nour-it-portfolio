@@ -1,4 +1,5 @@
 import React, { ReactNode, useEffect, useState, useLayoutEffect, useReducer, useRef, MouseEventHandler } from 'react'
+import { getContent } from '../../function'
 
 export default function HomeHeader() {
 
@@ -76,9 +77,16 @@ const content: any = {
 		'skills': 'Skills',
 		'blog': 'Blog',
 		'contact': 'Contact',
+	},
+	fr: {
+		'home': 'acceuil',
+		'about': 'à propos',
+		'service': 'service',
+		'skills': 'compétences',
+		'blog': 'Blog',
+		'contact': 'Contact',
 	}
 }
 
-const userPreferredLanguage = navigator.language || 'en-EN'
-const MENU_ITEMS: any =  content[userPreferredLanguage.split('-')[0]] || content.en 
+const MENU_ITEMS: any =  getContent(content)
 

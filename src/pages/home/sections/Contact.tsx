@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import NourButton from '../../../components/core/NourButton'
 import NourIcon from '../../../components/core/NourIcon'
-import { CONTACT } from '../../../data/contact';
+import { CONTACT } from '../../../data/home/contact';
 
 export default function Contact() {
 

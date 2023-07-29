@@ -1,0 +1,31 @@
+
+const firebaseConfig = {
+    apiKey: "",
+    authDomain: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: "",
+    measurementId: ""
+};
+
+
+// console.log(process.env)
+
+if (process.env.NODE_ENV != 'development') {
+    import("firebase/app")
+        .then((app) => {
+            import("firebase/analytics")
+                .then((analytics) => {
+                    analytics.getAnalytics(app.initializeApp(firebaseConfig));
+                })
+                .catch((error) => {
+                    console.log('firebase analytics error ', error)
+                });
+        })
+        .catch((error) => {
+            console.log('firebase app error ', error)
+        });
+}
+
+export { }

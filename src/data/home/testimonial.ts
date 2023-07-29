@@ -1,4 +1,5 @@
-import { Client } from "../type";
+import { getContent } from "../../function";
+import { Client } from "../../type";
 
 const content: any = {
     en: {
@@ -78,5 +79,4 @@ const content: any = {
 
 }
 
-const userPreferredLanguage = navigator.language || 'en-EN'
-export const CLIENT: Client = content[userPreferredLanguage.split('-')[0]] || content.en
+export const CLIENT: Client =  getContent(content)

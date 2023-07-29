@@ -57,3 +57,8 @@ export type Skill = {
     subtitle: String,
     skills: Object[],
 }
+
+
+export type Experience = {
+    experiences: Object[]
+}

@@ -1,28 +1,21 @@
-import { HomeAbout } from "../type";
+import { getContent } from "../../function";
+import { HomeAbout } from "../../type";
 
 const content: any = {
     en: {
         title: "About Me",
         subtitle: "My Introducation",
-        abouts: [{
-            'Experience': {
-                value: "+4 years",
-                icon: "award-svg",
-                width: "31"
-            },
-        }, {
-            'Completed': {
-                value: "3+ projects",
-                icon: "cloud-svg",
-                width: "26"
-            },
-        }, {
-            'Supports': {
-                value: "online 24/7",
-                icon: "hear-phone-svg",
-                width: "20"
+        abouts: [
+            {
+                'Experience': { value: "+4 years", icon: "award-svg", width: "31" },
+            }, 
+            {
+                'Completed': { value: "3+ projects", icon: "cloud-svg",  width: "26" },
+            }, 
+            {
+                'Supports': { value: "online 24/7", icon: "hear-phone-svg", width: "20" }
             }
-        }],
+        ],
         previousRole: `In my previous role, I was responsible for building and maintaining a suite of web applications for a large
         e-commerce company. I worked closely with designers and product managers to ensure that the applications
         were user-friendly and met the needs of our customers. I also collaborated with back-end developers to
@@ -33,25 +26,17 @@ const content: any = {
     fr: {
         title: "A propos de moi",
         subtitle: "Ma présentation",
-        abouts: [{
-            'Experience': {
-                value: "+4 years",
-                icon: "award-svg",
-                width: "31"
-            },
-        }, {
-            'Completed': {
-                value: "3+ projects",
-                icon: "cloud-svg",
-                width: "26"
-            },
-        }, {
-            'Supports': {
-                value: "online 24/7",
-                icon: "hear-phone-svg",
-                width: "20"
+        abouts: [
+            {
+                'Experience': { value: "+4 years", icon: "award-svg", width: "31" },
+            }, 
+            {
+                'Completed': { value: "3+ projects", icon: "cloud-svg", width: "26" },
+            }, 
+            {
+                'Supports': { value: "online 24/7", icon: "hear-phone-svg", width: "20" }
             }
-        }],
+        ],
         previousRole: `Dans mon rôle précédent, j'étais responsable de la création et de la maintenance d'une suite d'applications Web pour un grand
         société de commerce électronique. J'ai travaillé en étroite collaboration avec les designers et les chefs de produits pour m'assurer que les applications
         étaient conviviaux et répondaient aux besoins de nos clients. J'ai également collaboré avec des développeurs back-end pour
@@ -61,6 +46,4 @@ const content: any = {
     }
 }
 
-
-const userPreferredLanguage = navigator.language || "en-EN";
-export const ABOUT: HomeAbout = content[userPreferredLanguage.split("-")[0]] || content.en
+export const ABOUT: HomeAbout = getContent(content)
