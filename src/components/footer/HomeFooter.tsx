@@ -79,6 +79,10 @@ const content: any = {
         img: "Instagram.svg",
         link: "https://www.instagram.com/nour.it.ng/"
       },
+      {
+        img: "Github.svg",
+        link: "https://github.com/nour-it/"
+      },
     ]
   }
 }

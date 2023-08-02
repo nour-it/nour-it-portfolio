@@ -7,7 +7,6 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 import "./index.css"
 
-// import { GoogleOAuthProvider } from '@react-oauth/google';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -22,9 +21,7 @@ const router = createBrowserRouter(routeObject);
 const root = ReactDOM.createRoot(document.getElementById('root') as Element);
 root.render(
   <React.StrictMode>
-    {/* <GoogleOAuthProvider clientId="569553056609-ifbb1uv071bd4hp87mjcatvmlcca3pqk.apps.googleusercontent.com"> */}
-        <RouterProvider router={router} />
-    {/* </GoogleOAuthProvider> */}
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

@@ -1,8 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import NourIcon from '../../../components/core/NourIcon'
-import { QUALIFICATION } from '../../../data/home/qualification'
+import { QUALIFICATION, maps } from '../../../data/home/qualification'
+
 
 export default function Qualification() {
+    const [state, setState] = useState<{ showMap: boolean, mapId: number | null }>({ showMap: false, mapId: null })
+
+    useEffect(() => {
+
+        return () => {
+
+        }
+    }, [])
+
+    function onToggleMap(index: number | null) {
+        if (index != null && maps[index]) {
+            setState({ ...state, showMap: !state.showMap, mapId: index })
+        } else {
+            setState({ ...state, showMap: !state.showMap, mapId: null })
+        }
+        // {maps[state.mapId]}
+    }
+
+
+
     return (
         <section className='section_qualification' >
             <div>
@@ -16,8 +37,16 @@ export default function Qualification() {
                 <div className='line'>
                     {QUALIFICATION.qualifications.map((value: Object, index: number): React.ReactNode => (<span className='round' key={index.toString()}></span>))}
                 </div>
-                {QUALIFICATION.qualifications.map(qualificationItem)}
+                {QUALIFICATION.qualifications.map(
+                    (qualification: Object, index: number, array: Object[]): React.ReactNode => {
+                        return qualificationItem(qualification, index, onToggleMap)
+                    })}
             </div>
+            {state.showMap && state.mapId != null && <div className="map">
+                    <div dangerouslySetInnerHTML={{ __html: maps[state.mapId] }} />
+                    <button onClick={() => onToggleMap(null)}><NourIcon id="close"/></button>
+            </div>}
+
         </section>
     )
 }
@@ -37,7 +66,7 @@ function categoryItem(category: Object, index: number, array: Object[]): React.R
 }
 
 
-function qualificationItem(qualification: Object, index: number, array: Object[]): React.ReactNode {
+function qualificationItem(qualification: Object, index: number, callback: any): React.ReactNode {
     const title = Object.values(qualification)[0]
     const adress = Object.values(qualification)[1]
     const icon = Object.values(qualification)[2]
@@ -48,7 +77,7 @@ function qualificationItem(qualification: Object, index: number, array: Object[]
         <div className={`card-3 ${position}`} key={index.toString()}>
             <div>
                 <h2 className='h2'>{title}</h2>
-                <a className='h2 gray-5' href='#'>{adress}</a>
+                <a className='h2 gray-5' href='#blog' onClick={() => callback(index)}>{adress}</a>
             </div>
             <span className='text-gray-2'>
                 <NourIcon id={"calendar"} width={18} /> {period}
